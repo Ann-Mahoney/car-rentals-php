@@ -51,6 +51,15 @@ class Database{
         echo "failed to insert into the table". $e->getMessage();
        }
     }
+
+    public function getAllBooking(){
+        try{
+        $query = $this->db->query("SELECT * FROM `booking` WHERE 1");
+        $query->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            echo "failed to fetch the booking". $e->getMessage();
+        }
+    }
 }
 
 // try {
