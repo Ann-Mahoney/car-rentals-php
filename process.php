@@ -1,10 +1,9 @@
 <?php
+session_start();
+require_once("database.php");
 // process.php - Handle form submission with validation and insert data using PDO
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Include the database connection
-    require_once 'database.php';
-
     // Retrieve and sanitize form inputs
     $name = trim($_POST['name'] ?? '');
     $offer = trim($_POST['offer'] ?? '');
@@ -64,6 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
+        // Instantiate Database and get PDO connection
+        $db = new Database("localhost", "root", "", "car_rentals");
+        $pdo = $db->connect();
+
         // Prepare the SQL insert statement
         $stmt = $pdo->prepare("INSERT INTO booking (name, offer, pickup, return_date, email, contact, comment) VALUES (:name, :offer, :pickup, :return_date, :email, :contact, :comment)");
 
