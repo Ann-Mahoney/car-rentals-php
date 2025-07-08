@@ -37,6 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($return_date)) {
         $errors[] = "Return date is required.";
     }
+    if (empty($comment)) {
+        $errors[] = "Comment is required.";
+    }
 
     // Validate date formats and logic
     if (!empty($pickup) && !DateTime::createFromFormat('Y-m-d', $pickup)) {
