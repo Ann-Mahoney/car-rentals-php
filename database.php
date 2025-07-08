@@ -39,10 +39,10 @@ class Database{
 
          $query->bindParam(1, $name);
          $query->bindParam(2, $email);
-         $query->bindParam(3, $contact);
-         $query->bindParam(4, $pickup);
-         $query->bindParam(5, $return_date);
-         $query->bindParam(6, $offer);
+         $query->bindParam(3, $offer);
+         $query->bindParam(4, $contact);
+         $query->bindParam(5, $pickup);
+         $query->bindParam(6, $return_date);
          $query->bindParam(7, $comment);
 
          $query->execute();
@@ -55,7 +55,7 @@ class Database{
     public function getAllBooking(){
         try{
         $query = $this->db->query("SELECT * FROM `booking` WHERE 1");
-        $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
         }catch(PDOException $e){
             echo "failed to fetch the booking". $e->getMessage();
         }
