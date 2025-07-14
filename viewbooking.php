@@ -1,3 +1,4 @@
+
 <?php  
 require_once("database.php");
 $db = new Database("localhost", "root", "", "car_rentals");
@@ -143,68 +144,69 @@ $bookings = $db ->getAllBooking();
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>View Bookings</h2>
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Contact</th>
-											<th>Pickup Date</th>
-											<th>Return date</th>
-											<th>Offer</th>
-											<th>Comment</th>
-											<th>Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php 
-										foreach($bookings as $booking): 
-										?>
-										<tr>
-											<td> <?php echo $booking["name"]; ?> </td>
-											<td> <?php echo $booking["email"]; ?> </td>
-											<td> <?php echo $booking["contact"]; ?> </td>
-											<td> <?php echo $booking["pickup"]; ?> </td>
-											<td> <?php echo $booking["return_date"]; ?> </td>
-											<td> <?php echo $booking["offer"]; ?> </td>
-											<td> <?php echo $booking["comment"]; ?> </td>
-											<td>Action</td>
-										</tr>
-										<?php 
-										endforeach;
-										?>
-									</tbody>
-								</table>
-							</section>
-							<section>
-								<h2>Contact Info</h2>
+<footer id="footer" >
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between; margin: 50px;">
+        <section style="flex: 0 0 70%; min-width: 300px; overflow-x: auto;">
+            <h2>View Bookings</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Pickup Date</th>
+                        <th>Return date</th>
+                        <th>Offer</th>
+                        <th>Comment</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    foreach($bookings as $booking): 
+                    ?>
+                    <tr>
+                        <td> <?php echo $booking["name"]; ?> </td>
+                        <td> <?php echo $booking["email"]; ?> </td>
+                        <td> <?php echo $booking["contact"]; ?> </td>
+                        <td> <?php echo $booking["pickup"]; ?> </td>
+                        <td> <?php echo $booking["return_date"]; ?> </td>
+                        <td> <?php echo $booking["offer"]; ?> </td>
+                        <td> <?php echo $booking["comment"]; ?> </td>
+                        <td>Action</td>
+                    </tr>
+                    <?php 
+                    endforeach;
+                    ?>
+                </tbody>
+            </table>
+        </section>
+        <section style="flex: 0 0 25%; min-width: 200px;">
+            <div>
+                <h2>Contact Info</h2>
+                <ul class="alt">
+                    <li><span class="fa fa-envelope-o"></span> <a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#">contact@company.com</a></li>
+                    <li><span class="fa fa-phone"></span> +1 333 4040 5566 </li>
+                    <li><span class="fa fa-map-pin"></span> 212 Barrington Court New York, ABC 10001 United States of America</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Follow Us</h2>
+                <ul class="icons">
+                    <li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+            </div>
+            </section>
 
-								<ul class="alt">
-									<li><span class="fa fa-envelope-o"></span> <a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#">contact@company.com</a></li>
-									<li><span class="fa fa-phone"></span> +1 333 4040 5566 </li>
-									<li><span class="fa fa-map-pin"></span> 212 Barrington Court New York, ABC 10001 United States of America</li>
-								</ul>
-
-								<h2>Follow Us</h2>
-
-								<ul class="icons">
-									<li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://demo.phpjabbers.com/free-web-templates/car-rental-website-template-186/offers.html#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								</ul>
-							</section>
-
-							<ul class="copyright">
-								<li>Copyright © 2020 Company Name </li>
-								<li>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
-							</ul>
-						</div>
-					</footer>
+            <ul class="copyright">
+                <li>Copyright © 2020 Company Name </li>
+                <li>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
+            </ul>
+        </div>
+</footer>
 
 			</div>
 
